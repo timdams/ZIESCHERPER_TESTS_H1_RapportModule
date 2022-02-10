@@ -25,7 +25,7 @@ namespace RapportTest
                         var l = r.GetType().GetMethod("PrintGraad");
                         l.Invoke(r, null);
                         var result = sw.ToString().Trim();
-                        Assert.AreEqual(text, result,$"{graad} zou {text} moeten geven maar ik kreeg {text}");
+                        Assert.AreEqual(text, result,$"{graad} zou {text} moeten geven maar ik kreeg {result}");
                     }
                     else
                     {
