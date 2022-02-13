@@ -25,6 +25,8 @@ namespace RapportTest
                         var l = r.GetType().GetMethod("PrintGraad");
                         l.Invoke(r, null);
                         var result = sw.ToString().Trim();
+                        if (result == string.Empty)
+                            Assert.Fail("De methode PrintGraad moet zaken naar het scherm sturen (en heeft dus returntype void, niet string), maar ik heb niets zien verschijnen op het scherm.");
                         Assert.AreEqual(text, result,$"{graad} zou {text} moeten geven maar ik kreeg {result}");
                     }
                     else
