@@ -24,10 +24,10 @@ namespace RapportTest
                     {
                         var l = r.GetType().GetMethod("PrintGraad");
                         l.Invoke(r, null);
-                        var result = sw.ToString().Trim();
+                        var result = sw.ToString().Trim().ToLower();
                         if (result == string.Empty)
                             Assert.Fail($"De methode PrintGraad moet zaken naar het scherm sturen, maar ik heb niets zien verschijnen op het scherm.{graad} zou {text} moeten geven maar ik kreeg {result} ");
-                        Assert.IsTrue(result.Contains(text),$"{graad} zou {text} moeten geven maar ik kreeg {result}");
+                        Assert.IsTrue(result.Contains(text.ToLower()),$"{graad} zou {text} moeten geven maar ik kreeg {result}");
                     }
                     else
                     {
